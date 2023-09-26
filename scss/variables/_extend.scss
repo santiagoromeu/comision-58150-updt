@@ -1,0 +1,26 @@
+//EXTEND
+
+%estiloPrincipal {
+    color: $third;
+    font-family: $fontsmain;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+%imgPrincipal{
+    width: 400px;
+    height: 400px;
+}
+
+//MIXIN
+
+@mixin estiloContact($minwidth, $padding){
+    display:flex ;
+    flex-direction: column;
+    padding: $padding;
+    min-width: $minwidth;
+}

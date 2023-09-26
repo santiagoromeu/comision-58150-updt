@@ -1,0 +1,261 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+.intro {
+  color: #302f4e;
+  font-family: "Mulish", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: center;
+  width: 100%;
+  padding: 10px; }
+
+.imgvista {
+  width: 400px;
+  height: 400px; }
+
+/*Clase para el div despues de la etiqueta Body*/
+.cuerpo {
+  background: #fcaf90;
+  background: linear-gradient(0deg, #fce390 0%, #fce596 10%, #fdecb0 30%, #fffff0 100%);
+  position: relative;
+  padding-bottom: 100px;
+  min-height: 100vh; }
+
+/*Clase para el primer div contenedor del titulo*/
+.intro h1 {
+  font-family: "Mulish", sans-serif; }
+
+.intro h2 {
+  font-family: "Mulish", sans-serif;
+  font-size: 20px;
+  text-align: center; }
+
+/*Seteo de tamaño de imagen carrusel en index*/
+/*Margenes para ROW containers en FAQ y Apartamentos*/
+.rmargin {
+  justify-content: space-evenly;
+  margin: 10px 10px 10px 10px; }
+
+.rmargin-carr {
+  justify-content: space-evenly;
+  margin-top: 20px;
+  border-radius: 5px; }
+
+/*Estilo para botones*/
+.btn-style {
+  width: 100px;
+  border-radius: 25px;
+  background-color: #fffff0;
+  border: solid 1px;
+  font-family: "Mulish", sans-serif;
+  color: #236a96; }
+  .btn-style:hover {
+    background-color: #302f4e;
+    color: #ffffff;
+    border-color: #302f4e; }
+
+/*Posicionamiento para contenido de cards*/
+.carbod {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+/*Estilo para texto de contenido*/
+.cont-stl {
+  font-family: "Mulish", sans-serif;
+  color: #236a96; }
+
+/*Estilo para  navbar*/
+.header__navpos {
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center; }
+  .header__navpos .color-me {
+    text-decoration: none;
+    color: #236a96; }
+    .header__navpos .color-me:hover {
+      color: #302f4e; }
+  .header__navpos li {
+    font-family: "Mulish", sans-serif;
+    border-left: 1px solid #236a96;
+    padding: 0px 5px; }
+  .header__navpos--logoimg {
+    width: 120px;
+    height: 110px;
+    margin: 0px 20px; }
+  .header__navpos .btn-color {
+    color: #236a96; }
+
+/*Div contenedor principal de FAQ*/
+.contfaq1 {
+  background-color: transparent;
+  border-radius: 5px; }
+  .contfaq1 .contfaq2 {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center; }
+    .contfaq1 .contfaq2 .style-fq {
+      text-decoration: none;
+      color: #236a96;
+      font-weight: bold; }
+      .contfaq1 .contfaq2 .style-fq:hover {
+        color: #302f4e; }
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  min-width: 20 vw; }
+  .contact label {
+    padding: 5px; }
+  .contact input {
+    text-align: center;
+    border-radius: 5px; }
+    .contact input:focus {
+      background-color: #302f4e;
+      color: #ffffff; }
+      .contact input:focus::placeholder {
+        color: #ffffff; }
+  .contact textarea {
+    text-align: center;
+    border-radius: 5px;
+    resize: none; }
+    .contact textarea:focus {
+      background-color: #302f4e;
+      color: #ffffff; }
+      .contact textarea:focus::placeholder {
+        color: #ffffff; }
+
+/*Clases para el contenido de footer*/
+.footer {
+  background-color: #ffffff;
+  padding-top: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; }
+  .footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; }
+    .footer ul li {
+      display: flex;
+      text-decoration: none;
+      justify-content: space-evenly; }
+      .footer ul li a {
+        text-decoration: none;
+        color: #236a96; }
+        .footer ul li a:hover {
+          color: #302f4e; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: auto 50vh;
+  grid-template-areas: "section1 section1" "section2 section2" "aside1 aside1"; }
+
+.section1 {
+  grid-area: section1;
+  background-color: transparent; }
+
+.section2 {
+  grid-area: section2;
+  font-family: "Mulish", sans-serif;
+  color: #236a96;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly; }
+  .section2 .responsive-iframe {
+    margin: 10px;
+    width: 220px;
+    height: 160px; }
+
+.aside1 {
+  grid-area: aside1;
+  font-family: "Mulish", sans-serif;
+  color: #236a96;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+
+@media (min-width: 320px) {
+  .section2 .responsive-iframe {
+    margin: 10px;
+    width: 250px;
+    height: 225px; } }
+
+@media (min-width: 375px) {
+  .section2 .responsive-iframe {
+    margin: 10px;
+    width: 310px;
+    height: 225px; } }
+
+@media (min-width: 425px) {
+  .section2 .responsive-iframe {
+    margin: 10px;
+    width: 360px;
+    height: 200px; } }
+
+@media (min-width: 768px) {
+  .section2 .responsive-iframe {
+    margin: 10px;
+    width: 700px;
+    height: 600px; } }
+
+@media (min-width: 1024px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: auto 50vh;
+    grid-template-areas: "section1 section1" "section2 aside1" "section2 aside1"; }
+  .section2 .responsive-iframe {
+    margin: 10px;
+    width: 440px;
+    height: 480px; }
+  .aside1 {
+    padding: 20px;
+    justify-content: space-evenly; } }
+
+@media (min-width: 1440px) {
+  .section2 .responsive-iframe {
+    margin: 10px;
+    width: 640px;
+    height: 500px; }
+  .aside1 {
+    padding: 0px 20px;
+    justify-content: space-evenly; }
+    .aside1 p {
+      margin-top: 20px; } }
+
+@media (min-width: 2560px) {
+  .section2 .responsive-iframe {
+    margin: 10px;
+    width: 1190px;
+    height: 500px; }
+  .aside1 {
+    padding: 0px 20px;
+    justify-content: space-evenly; }
+    .aside1 p {
+      margin-top: 20px; } }

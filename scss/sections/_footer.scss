@@ -1,0 +1,26 @@
+  /*Clases para el contenido de footer*/
+  .footer {
+    background-color: $neutral;
+    padding-top: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            li {
+                display: flex;
+                text-decoration: none;
+                justify-content: space-evenly;
+                a {
+                    text-decoration: none;
+                    color: $second;
+                    &:hover{
+                      color: $third;
+                    }
+              }
+            }
+        }
+    }

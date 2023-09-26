@@ -1,0 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  @import './variables/colors';
+  @import './variables/typo';
+  @import './variables/extend';
+  @import './sections/shared';
+  @import './sections/navbar';
+  @import './sections/faq';
+  @import './sections/contact';
+  @import './sections/footer';
+  @import './sections/ubicacion'
+  

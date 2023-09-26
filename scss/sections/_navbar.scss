@@ -1,0 +1,27 @@
+  /*Estilo para  navbar*/
+  .header{
+  &__navpos {
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    .color-me {
+        text-decoration: none;
+        color: $second;
+        &:hover{
+            color: $third;
+        }
+    }
+    li{
+      font-family: $fontsmain;
+      border-left: 1px solid $second;
+      padding: 0px 5px;
+    }
+    &--logoimg {
+        width: 120px;
+        height: 110px;
+        margin: 0px 20px;  
+      }
+    .btn-color{
+      color: $second;
+    }
+  }}

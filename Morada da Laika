@@ -1,0 +1,28 @@
+moradadalaika.com
+
+Un sitio web para la promoción y alquiler de departamentos con fines turísticos de la Posada "Morada da Laika" ubicada al sur de Brasil.
+
+INICIO:
+    Agregar un pop-up con logo transparente de 3 segundos al inicio.
+    Achicar fotos para que se vean bien.
+
+ALOJAMIENTO: 
+    Agreagar depto 3.
+    Poner carrusel con 3 img cada uno.
+    Formatear imagenes.
+    Achicar cards y agregarles un carrousel que tenga hover.
+    posicionar los botones.
+
+UBICACION: 
+    Achicar el iFrame poniendolo adentro de un div.
+    Agregar @media query o variable con @IF para que sea responsive.
+    Agregar galeria grid para fotos del lugar.
+    Agregar un loading al mapa.
+
+FOOTER:
+    Corregir para que no se estire en pantallas grandes. Ver la posicion de footer.
+
+CAMBIAR LOS DIVS DE Bootstrap
+AGREGAR MAS BEM, EXTEND Y MIXIN.
+HACER WIRE FRAMES.
+

@@ -1,0 +1,29 @@
+.contact {
+  @include estiloContact(20 vw, 10px);
+    label {
+      padding: 5px;
+    }
+    input {
+      text-align: center;
+      border-radius: 5px;
+      &:focus {
+        background-color: $third;
+        &::placeholder {
+          color: $neutral;
+        }
+        color: $neutral;
+      }
+    }
+    textarea {
+      text-align: center;
+      border-radius: 5px;
+      resize: none;
+      &:focus {
+        background-color: $third;
+        &::placeholder {
+          color: $neutral;
+              }
+        color: $neutral;
+      }
+    }
+  }

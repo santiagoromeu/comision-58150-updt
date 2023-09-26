@@ -1,0 +1,19 @@
+/*Div contenedor principal de FAQ*/
+.contfaq1 {
+  background-color: transparent;
+  border-radius: 5px;
+  .contfaq2 {
+    background-color: $neutral;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    .style-fq {
+      text-decoration: none;
+      color: $second;
+      font-weight:bold;
+      &:hover {
+        color: $third;
+      }
+    }
+  }
+}

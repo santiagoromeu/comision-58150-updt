@@ -1,0 +1,73 @@
+/*Clase para el div despues de la etiqueta Body*/
+.cuerpo {
+  background: $fondo1;
+  background: linear-gradient(
+    0deg,
+    $fondo2 0%,
+    $fondo3 10%,
+    $fondo4 30%,
+    $fondo5 100%
+  );
+  position: relative;
+  padding-bottom: 100px;
+  min-height: 100vh;
+}
+
+/*Clase para el primer div contenedor del titulo*/
+.intro {
+  @extend %estiloPrincipal;
+  h1 {
+    font-family: $fontsmain;
+  }
+  h2 {
+    font-family: $fontsmain;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+/*Seteo de tamaño de imagen carrusel en index*/
+.imgvista {
+  @extend %imgPrincipal;
+}
+
+/*Margenes para ROW containers en FAQ y Apartamentos*/
+.rmargin {
+  justify-content: space-evenly;
+  margin: 10px 10px 10px 10px;
+}
+.rmargin-carr {
+  justify-content: space-evenly;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+
+/*Estilo para botones*/
+.btn-style {
+  width: 100px;
+  border-radius: 25px;
+  background-color: $fondo5;
+  border: solid 1px;
+  font-family: $fontsmain;
+  color: $second;
+  &:hover {
+    background-color: $third;
+    color: $neutral;
+    border-color: $third;
+  }
+}
+
+/*Posicionamiento para contenido de cards*/
+.carbod {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*Estilo para texto de contenido*/
+.cont-stl {
+  font-family: $fontsmain;
+  color: $second;
+}
+
