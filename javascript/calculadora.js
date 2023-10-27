@@ -1,7 +1,5 @@
 //calculadora de estadia
 
-alert("Desea calcular el costo de su estadía? (los valores son expresados en Dolares)");
-
 let total;
 let continua;
 let personas;
@@ -22,51 +20,60 @@ function Reservas(reserva) {
     ' en instantes le enviaremos un email para finalizar la reserva, Gracias!')}
 }
 
+function saveForm(){
+    localStorage.setItem("nombre", Reservas.nombre.value)
+    localStorage.setItem("apellido", Reservas.apellido.value)
+    localStorage.setItem("email", Reservas.email.value)
+    localStorage.setItem("huespedes", Reservas.host.value)
+    localStorage.setItem("dias", Reservas.cant.value)
+    localStorage.setItem("departamento", dpts.reservado.value)
+}
+    
+
+function Reservas(reserva) {
+    this.nombre = reserva.nombre;
+    this.apellido = reserva.apellido;
+    this.email = reserva.email;
+    this.host = reserva.host;
+    this.cant = reserva.cant;
+}
+
 function calcularEstadia(totalCompra){
-let total=totalCompra * dias;
-console.log("El costo total de su estadia sera de U$D"+ total);
-alert("El costo total de su estadia sera de U$D"+total); 
-}
+    let total=totalCompra * Reservas.cant;
+    console.log("El costo total de su estadia sera de U$D"+ total);
+    alert("El costo total de su estadia sera de U$D"+total); 
+    }
 
-do{
-    personas= parseInt(prompt('Ingrese la cantidad de personas que se van a hospedar'));  
-if(personas<=2){
-    dias= parseInt(prompt('Ingrese la cantidad de dias'));
-    alert("departamento para 1 o 2 personas"); 
-    calcularEstadia(dpts[0].precio);
-    valres= prompt('Desea realizar la reserva? s-si n-no');
-        if (valres='s')
-        {dpts[0].reservado=true}
-}else if(personas<=4){
-    dias= parseInt(prompt('Ingrese la cantidad de dias'));
-    alert("departamento para 3 o 4 personas");
-    calcularEstadia(dpts[1].precio);
-    valres= prompt('Desea realizar la reserva? s-si n-no');
-        if (valres='s')
-        {dpts[1].reservado=true}
-}else if(personas<=6){
-    dias= parseInt(prompt('Ingrese la cantidad de dias'));
-    alert("departamento para 5 o 6 personas");
-    calcularEstadia(dpts[2].precio);
-    valres= prompt('Desea realizar la reserva? s-si n-no');
-        if (valres='s')
-        {dpts[2].reservado=true}
-}else{
-    alert("No contamos el departamento adecuado");
-}continua = prompt("Desea calcular nuevamente? s-si n-no")}while(continua == 's');
+let boton = document.getElementById("boton");
 
+boton.onclick = function(){
+    Reservas.nombre = document.getElementById("nombre").value;
+    Reservas.apellido = document.getElementById("apellido").value;
+    Reservas.email = document.getElementById("email").value;
+    Reservas.host = document.getElementById("host").value;
+    Reservas.cant = document.getElementById("cant").value;
+    alert("Hola "+ Reservas.nombre + ' ' + Reservas.apellido)
+    
+    //isNaN(reserva.cant) && console.log("Ingrese el numero de huespedes y días");
 
-if (valres == 's'){
-    alert('Por favor ingrese sus datos acontinuacion para realizar su reserva');
-    reservadpt = new Reservas({ 
-        nombre:prompt('Ingrese su nombre'),
-        apellido:prompt('Ingrese su apellido'),
-        email:prompt('Ingrese su email'),
-    })
-
-}
-
-reservadpt.msg();
-
-const cerrado = dpts.find(precio => precio.reservado === true)
-console.log(cerrado)
+    if(Reservas.host<=2){
+        alert("Departamento para 1 o 2 personas"); 
+        calcularEstadia(dpts[0].precio);
+            dpts[0].reservado = confirm('Desea realizar la reserva?');
+            console.log(dpts[0].reservado)
+            alert(dpts[0].reservado)
+    }else if(Reservas.host<=4){
+        alert("Departamento para 3 o 4 personas");
+        calcularEstadia(dpts[1].precio);
+            dpts[1].reservado = confirm('Desea realizar la reserva?');
+            console.log(dpts[1].reservado)
+            alert(dpts[1].reservado)
+    }else if(Reservas.host<=6){
+        alert("Departamento para 5 o 6 personas");
+        calcularEstadia(dpts[2].precio);
+            dpts[2].reservado = confirm('Desea realizar la reserva?');
+            console.log(dpts[2].reservado)
+            alert(dpts[2].reservado)
+    }else{
+        alert("No contamos el departamento adecuado");
+    }}
