@@ -16,6 +16,8 @@
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <!-- Mi CSS -->
   <link href="../css/style.css" rel="stylesheet">
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <title>CALCULADORA | Posada Morada da Laika</title>
 </head>
 
@@ -68,7 +70,7 @@
         
       </p>
     </div>
-    <form class="container mt-4 mb-4 contact cont-stl">
+    <form class="container mt-4 mb-4 contact cont-stl" id="myForm">
       <div class="mb-2 w-50">
         <label for="exampleFormControlInput1" class="form-label">Nombre</label>
         <input type="text" class="form-control" id="nombre" placeholder="Nombre">
@@ -86,14 +88,10 @@
         <input type="number" class="form-control" id="host" placeholder="solo numeros">
       </div>
       <div class="mb-2 w-50">
-        <label for="exampleFormControlInput1" class="form-label">Cantidad de Días a hospedarse</label>
+        <label for="exampleFormControlInput1" class="form-label">Cantidad de días a hospedarse</label>
         <input type="number" class="form-control" id="cant" placeholder="solo numeros">
-      </div>
-      <div class="mb-2 form-check">
-        <input type="checkbox" class="form-check-input" id="check">
-        <label class="form-check-label" for="exampleCheck1">Acepto los terminos y condiciones</label>
-      </div>
-      <button type="submit" class="btn btn-primary btn-style" id="boton">Calcular</button>
+      </div class="mb-2">
+      <button type="button" class="btn btn-primary btn-style" id="boton">Calcular</button>
     </form>
 
     <!--Footer-->
@@ -129,6 +127,6 @@
   
   <!--Calculadora JS-->
   <script src="../javascript/calculadora.js"></script>
-</body>
+  </body>
 
 </html>
