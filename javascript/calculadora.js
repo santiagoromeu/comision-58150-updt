@@ -21,6 +21,10 @@ const reservaJSON = JSON.stringify(reserva);
 console.log(reserva)
 console.log(reservaJSON)
 
+const dpts2 = { ...dpts};
+console.log (dpts2);
+
+
 function saveForm(){
     localStorage.setItem("nombre", Reservas.nombre)
     localStorage.setItem("apellido", Reservas.apellido)
@@ -41,43 +45,57 @@ function Reservas(reserva) {
 
 function calcularEstadia(totalCosto){
     total=totalCosto * Reservas.cant;
-    console.log("El costo total de su estadia sera de U$D"+ total);
-    alert("El costo total de su estadia sera de U$D"+total); 
-    }
-
-
-let boton = document.getElementById("boton");
-
-boton.addEventListener("click", guardarRes);
-
-function guardarRes(){
-    Reservas.nombre = document.getElementById("nombre").value;
-    Reservas.apellido = document.getElementById("apellido").value;
-    Reservas.email = document.getElementById("email").value;
-    Reservas.host = document.getElementById("host").value;
-    Reservas.cant = document.getElementById("cant").value;
-    alert("Hola "+ Reservas.nombre + ' ' + Reservas.apellido)
+    Swal.fire({
+    title: "Hola "+ Reservas.nombre +" "+ Reservas.apellido,
+    text:"El costo total de su estadía de "+Reservas.cant+" días para "+Reservas.host+" personas será de U$D"+total+", Desea confirmar la reserva?",
+    showDenyButton: true,
+    showCancelButton: true,
+    confirmButtonText: 'Si',
+    denyButtonText: 'No',
+    customClass: {
+        actions: 'my-actions',
+        cancelButton: 'order-1 right-gap',
+        confirmButton: 'order-2',
+        denyButton: 'order-3',
+      }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire("Muchas gracias por su confirmación!, a continuacion le enviaremos un mail para finalizar la reserva");
+        } else if (result.isDenied) {
+            Swal.fire("Desea relizar el calculo nuevamente?");
+        }
+      })
+   }
     
-    if(Reservas.host<=2){
-        alert("Departamento para 1 o 2 personas"); 
-        calcularEstadia(dpts[0].precio);
-            dpts[0].reservado = confirm('Desea realizar la reserva?');
+    let boton = document.getElementById("boton");
+    boton.addEventListener("click", guardarRes);
+
+    function guardarRes(){
+        Reservas.nombre = document.getElementById("nombre").value;
+        Reservas.apellido = document.getElementById("apellido").value;
+        Reservas.email = document.getElementById("email").value;
+        Reservas.host = document.getElementById("host").value;
+        Reservas.cant = document.getElementById("cant").value;
+
+        if(Reservas.host<=2){
+            calcularEstadia(dpts[0].precio);
             resConf=dpts[0].reservado;
-                saveForm();
-    }else if(Reservas.host<=4){
-        alert("Departamento para 3 o 4 personas");
-        calcularEstadia(dpts[1].precio);
-            dpts[1].reservado = confirm('Desea realizar la reserva?');
+            saveForm();
+            console.log(resConf)
+        }else if(Reservas.host<=4){
+            calcularEstadia(dpts[1].precio);
             resConf=dpts[1].reservado;
-                saveForm();
-    }else if(Reservas.host<=6){
-        alert("Departamento para 5 o 6 personas");
-        calcularEstadia(dpts[2].precio);
-            dpts[2].reservado = confirm('Desea realizar la reserva?');
+            saveForm();
+            console.log(resConf)
+        }else if(Reservas.host<=6){
+            calcularEstadia(dpts[2].precio);
             resConf=dpts[2].reservado;
-                saveForm();
-    }else{
-        alert("No contamos el departamento adecuado");
-    }
-}
+            saveForm();
+            console.log(resConf)
+        }else{
+            Swal.fire("No contamos el departamento adecuado, solo contamos con departamentos hasta 6 personas");
+        }
+            
+ }
+
 
